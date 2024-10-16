@@ -9,7 +9,7 @@ The program is written in React, as it was required. It assumes node is installe
 To run the program, you need to install the following libraries:
 
 1. Install yarn: `npm install yarn`
-2. Install packages `Yarn`
+2. Install packages `yarn`
 3. Start the application: `yarn start`
 
 Make sure to place the API key in a `.env` file with the variable name `REACT_APP_OPENWEATHER_API_KEY`.
