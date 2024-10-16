@@ -22,6 +22,7 @@ const DailyInfo = ({ date, minTemp, maxTemp }) => (
         sm: 400,
       },
       flexShrink: 0,
+      minHeight: 150,
     }}
   >
     <Typography variant="h6" component="div" sx={{ fontWeight: "bold", fontSize: 15 }}>

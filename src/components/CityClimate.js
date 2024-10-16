@@ -40,7 +40,14 @@ const CityClimate = ({ city }) => {
 
   return (
     <>
-      <Stack spacing={2} direction="column" sx={{ flexGrow: 1 }}>
+      <Stack
+        spacing={{
+          xs: 2,
+          sm: 8,
+        }}
+        direction="column"
+        sx={{ flexGrow: 1 }}
+      >
         <DataCard
           title="Next hours"
           data={parsedData.slice(0, 8)}
@@ -68,25 +75,24 @@ const CityClimate = ({ city }) => {
           )}
           separatorIndex={4}
         />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={refetch}
+            sx={{
+              width: {
+                xs: "100%",
+                sm: "30rem",
+              },
+              mt: 2,
+            }}
+            startIcon={<RefreshIcon />}
+          >
+            <Typography variant="button">Refresh</Typography>
+          </Button>
+        </Box>
       </Stack>
-
-      <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={refetch}
-          sx={{
-            width: {
-              xs: "100%",
-              sm: "30rem",
-            },
-            mt: 2,
-          }}
-          startIcon={<RefreshIcon />}
-        >
-          <Typography variant="button">Refresh</Typography>
-        </Button>
-      </Box>
 
       <LastUpdated lastRequestTime={lastRequestTime} />
     </>
