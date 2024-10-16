@@ -2,11 +2,12 @@
 
 ## General Considerations
 The provided API key (free subscription) only allows access to hourly weather forecasts with a three-hour interval. Consequently, daily forecast values are calculated based on the hourly data.
+The search functionality was not developed, the structure and the main requirements were prioritized.
 
 ## Program Execution
-The program is written in React, as it was required. It assumes node is installed.
+I used the react framework, as it was required. It assumes node is installed.
 
-To run the program, you need to install the following libraries:
+To run the program:
 
 1. Install yarn: `npm install yarn`
 2. Install packages `yarn`
