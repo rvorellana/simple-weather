@@ -13,5 +13,7 @@ To run the program, you need to install the following libraries:
 3. Start the application: `yarn start`
 
 Make sure to place the API key in a `.env` file with the variable name `REACT_APP_OPENWEATHER_API_KEY`.
+
+
 `REACT_APP_OPENWEATHER_API_KEY=<your_api_key_here>`
 
