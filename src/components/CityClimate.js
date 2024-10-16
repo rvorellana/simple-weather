@@ -11,14 +11,13 @@ import { coordinates } from "../constants/coordinates";
 import LastUpdated from "./LastUpdated";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
-import RefreshIcon from '@mui/icons-material/Refresh';
+import RefreshIcon from "@mui/icons-material/Refresh";
+import propTypes from "prop-types";
 
 const CityClimate = ({ city }) => {
   const { lat, lon } = coordinates[city];
-  const { parsedData, dailyData, loading, lastRequestTime, refetch } = useWeatherData(
-    lat,
-    lon
-  );
+  const { parsedData, dailyData, loading, lastRequestTime, refetch } =
+    useWeatherData(lat, lon);
 
   if (loading) {
     return (
@@ -71,27 +70,31 @@ const CityClimate = ({ city }) => {
         />
       </Stack>
 
-      <Box sx={{ mt: 2, display: 'flex', justifyContent: "center" }}>
-        <Button 
-          variant="contained" 
-          color="primary" 
+      <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
+        <Button
+          variant="contained"
+          color="primary"
           onClick={refetch}
           sx={{
             width: {
-              xs: '100%',
-              sm: '30rem'
+              xs: "100%",
+              sm: "30rem",
             },
-            mt: 2
+            mt: 2,
           }}
           startIcon={<RefreshIcon />}
         >
           <Typography variant="button">Refresh</Typography>
         </Button>
       </Box>
-      
+
       <LastUpdated lastRequestTime={lastRequestTime} />
     </>
   );
 };
 
 export default CityClimate;
+
+CityClimate.propTypes = {
+  city: propTypes.string.isRequired,
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import propTypes from 'prop-types';
 
 const LastUpdated = ({ lastRequestTime }) => {
   return (
@@ -26,3 +27,7 @@ const LastUpdated = ({ lastRequestTime }) => {
 };
 
 export default LastUpdated;
+
+LastUpdated.propTypes = {
+  lastRequestTime: propTypes.string.isRequired
+};
