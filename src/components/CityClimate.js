@@ -71,10 +71,7 @@ const CityClimate = ({ city }) => {
         />
       </Stack>
 
-      <Box sx={{ mt: 2, display: 'flex', justifyContent: {
-        xs: 'center',
-        sm: 'flex-start'
-      } }}>
+      <Box sx={{ mt: 2, display: 'flex', justifyContent: "center" }}>
         <Button 
           variant="contained" 
           color="primary" 
