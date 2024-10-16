@@ -15,7 +15,7 @@ const useWeatherData = (lat, lon) => {
 
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&cnt=40`
       );
 
       if (!response.ok) {
@@ -32,11 +32,8 @@ const useWeatherData = (lat, lon) => {
         },
         humidity: item.main.humidity,
         weather: {
-          description: item.weather[0]?.description,
           icon: item.weather[0]?.icon,
         },
-        clouds: item.clouds.all,
-        visibility: item.visibility,
         rain: item.rain ? item.rain['3h'] || 0 : 0,
       }));
 
